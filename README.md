@@ -2,24 +2,20 @@
 
 contactbook
 
-## mongoDB
+## setup 
 ```
-docker run -d -p 27017:27017 --name mongodb mongo:latest
-docker start mongodb
+npm init
+npm install express cors mongoose dotenv
 ```
 
 ## run
 ```
-npm init
-npm install express
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+
+npm run dev
 ```
 
-- install extensions: eslint, prettier - code formatter
-- config VS Code to format code when save or paste
 
-```
-npm install -D eslint prettier eslint-config-prettier
-```
 
 ```
 curl -X POST http://localhost:3000/api/contacts -H "Content-Type: application/json" -d '{"name":"Long Tran","email":"longtran@example.com","phone":"1234567890","address":"Vinh Long","favorite":false}'
@@ -32,4 +28,3 @@ curl -X DELETE http://localhost:3000/api/contacts
 
 curl -X DELETE http://localhost:3000/api/contacts/6a19687c99e95f43af1d38de
 ```
-
